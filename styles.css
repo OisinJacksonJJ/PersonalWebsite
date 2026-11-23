@@ -117,7 +117,67 @@ a:focus-visible {
   background: rgba(130, 201, 242, 0.12);
 }
 
-/* 4. Home page hero: the weather illustration is made from CSS shapes, no image needed. */
+/* 4. Decorative cloud banks sit between the header and each page's content. */
+.cloud-divider {
+  position: relative;
+  height: 52px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cloud-bank {
+  position: absolute;
+  bottom: 0;
+  width: 190px;
+  height: 20px;
+  border: 1px solid rgba(182, 228, 255, 0.2);
+  border-bottom: 0;
+  border-radius: 100px 100px 0 0;
+  background: linear-gradient(180deg, rgba(182, 228, 255, 0.1), rgba(130, 201, 242, 0.025));
+  filter: drop-shadow(0 0 12px rgba(130, 201, 242, 0.08));
+}
+
+.cloud-bank::before,
+.cloud-bank::after {
+  position: absolute;
+  bottom: 5px;
+  border: 1px solid rgba(182, 228, 255, 0.2);
+  border-bottom: 0;
+  border-radius: 50%;
+  background: rgba(130, 201, 242, 0.09);
+  content: "";
+}
+
+.cloud-bank::before {
+  left: 22px;
+  width: 56px;
+  height: 36px;
+}
+
+.cloud-bank::after {
+  left: 67px;
+  width: 45px;
+  height: 29px;
+}
+
+.cloud-bank-left {
+  left: -38px;
+  width: 210px;
+}
+
+.cloud-bank-center {
+  left: calc(50% - 112px);
+  width: 240px;
+  opacity: 0.75;
+}
+
+.cloud-bank-right {
+  right: -35px;
+  width: 200px;
+  opacity: 0.85;
+}
+
+/* 5. Home profile hero and photo placeholder. Replace the placeholder with your own image. */
 .hero {
   min-height: 470px;
   padding-block: 72px 64px;
@@ -125,6 +185,61 @@ a:focus-visible {
   grid-template-columns: 1.05fr 0.75fr;
   align-items: center;
   gap: 72px;
+}
+
+.profile-hero {
+  min-height: 400px;
+  padding-block: 40px 48px;
+  grid-template-columns: 1.1fr 0.75fr;
+  gap: 64px;
+}
+
+.portrait-placeholder {
+  position: relative;
+  width: min(100%, 340px);
+  min-height: 330px;
+  justify-self: end;
+  overflow: hidden;
+  border: 1px dashed rgba(182, 228, 255, 0.38);
+  border-radius: 22px;
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(130, 201, 242, 0.22), transparent 50%),
+    linear-gradient(150deg, rgba(21, 58, 88, 0.85), rgba(9, 33, 54, 0.9));
+}
+
+.portrait-head {
+  position: absolute;
+  top: 66px;
+  left: 50%;
+  width: 88px;
+  height: 88px;
+  border: 1px solid rgba(182, 228, 255, 0.32);
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba(182, 228, 255, 0.55), rgba(130, 201, 242, 0.2));
+  transform: translateX(-50%);
+}
+
+.portrait-shoulders {
+  position: absolute;
+  bottom: 57px;
+  left: 50%;
+  width: 190px;
+  height: 130px;
+  border: 1px solid rgba(182, 228, 255, 0.28);
+  border-radius: 100px 100px 22px 22px;
+  background: linear-gradient(145deg, rgba(182, 228, 255, 0.38), rgba(130, 201, 242, 0.12));
+  transform: translateX(-50%);
+}
+
+.portrait-caption {
+  position: absolute;
+  right: 12px;
+  bottom: 17px;
+  left: 12px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-align: center;
 }
 
 .eyebrow {
@@ -174,154 +289,7 @@ h1 {
   font-size: 1.05rem;
 }
 
-.button-link {
-  min-height: 48px;
-  padding: 0 19px;
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
-  border: 1px solid rgba(182, 228, 255, 0.28);
-  border-radius: 999px;
-  color: var(--text);
-  background: rgba(130, 201, 242, 0.1);
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: background 160ms ease, border-color 160ms ease;
-}
-
-.button-link:hover {
-  border-color: var(--sky);
-  background: rgba(130, 201, 242, 0.2);
-}
-
-/* 5. Weather card: adjust its text in index.html and its visual colors above. */
-.weather-card {
-  min-height: 350px;
-  padding: 22px 26px;
-  overflow: hidden;
-  border: 1px solid rgba(182, 228, 255, 0.22);
-  border-radius: 22px;
-  background:
-    radial-gradient(ellipse at 50% 34%, rgba(76, 158, 208, 0.23), transparent 47%),
-    linear-gradient(145deg, rgba(21, 58, 88, 0.95), rgba(9, 33, 54, 0.94));
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.16);
-}
-
-.weather-card-top,
-.weather-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.weather-card-top {
-  color: var(--muted);
-  font-size: 0.64rem;
-  letter-spacing: 0.12em;
-}
-
-.weather-art {
-  position: relative;
-  height: 150px;
-  margin-top: 7px;
-}
-
-.sun {
-  position: absolute;
-  top: 17px;
-  left: 50%;
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  background: linear-gradient(145deg, #ffe6a9, var(--sun));
-  box-shadow: 0 0 48px rgba(245, 202, 121, 0.25);
-  transform: translateX(-50%);
-}
-
-.cloud {
-  position: absolute;
-  bottom: 20px;
-  width: 120px;
-  height: 36px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, #d6efff, #8cbddc);
-  filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.16));
-}
-
-.cloud::before,
-.cloud::after {
-  position: absolute;
-  bottom: 12px;
-  border-radius: 50%;
-  background: inherit;
-  content: "";
-}
-
-.cloud::before {
-  left: 23px;
-  width: 48px;
-  height: 48px;
-}
-
-.cloud::after {
-  right: 18px;
-  width: 37px;
-  height: 37px;
-}
-
-.cloud-one {
-  left: calc(50% - 74px);
-  z-index: 1;
-}
-
-.cloud-two {
-  right: 8px;
-  bottom: 9px;
-  width: 68px;
-  height: 22px;
-  opacity: 0.5;
-  transform: scale(0.7);
-}
-
-.weather-label {
-  margin-bottom: 2px;
-  color: var(--sky);
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-}
-
-.weather-title {
-  margin-bottom: 2px;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.weather-note {
-  margin-bottom: 17px;
-  color: var(--muted);
-  font-size: 0.84rem;
-}
-
-.weather-rule {
-  height: 1px;
-  background: var(--line);
-}
-
-.weather-foot {
-  margin: 12px 0 0;
-  color: var(--muted);
-  font-size: 0.7rem;
-}
-
-.weather-foot span {
-  color: var(--sun);
-}
-
-/* 6. Home page signpost cards: each card links to one of the other pages. */
-.section-block {
-  padding-block: 22px 78px;
-}
-
+/* 6. Homepage details and Learn More signpost cards. */
 .section-heading {
   margin-bottom: 24px;
 }
@@ -333,10 +301,114 @@ h1 {
   letter-spacing: -0.035em;
 }
 
+.profile-section {
+  padding-block: 12px 78px;
+}
+
+.profile-section .section-heading {
+  margin-bottom: 20px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.profile-card {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(16, 47, 74, 0.85), rgba(12, 41, 66, 0.72));
+}
+
+.profile-card h3 {
+  margin-bottom: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-chip {
+  padding: 6px 11px;
+  border: 1px solid rgba(182, 228, 255, 0.18);
+  border-radius: 999px;
+  color: var(--sky-bright);
+  background: rgba(130, 201, 242, 0.08);
+  font-size: 0.8rem;
+}
+
+.interest-list {
+  margin: 0;
+  padding-left: 19px;
+  color: var(--muted);
+}
+
+.interest-list li + li {
+  margin-top: 7px;
+}
+
+.contact-card {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+}
+
+.contact-card h3 {
+  margin-bottom: 6px;
+}
+
+.contact-note {
+  max-width: 430px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.profile-link,
+.cv-note {
+  padding: 8px 12px;
+  border: 1px solid rgba(182, 228, 255, 0.2);
+  border-radius: 999px;
+  color: var(--sky-bright);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.profile-link:hover {
+  border-color: var(--sky);
+  background: rgba(130, 201, 242, 0.1);
+}
+
+.cv-note {
+  color: var(--muted);
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+}
+
+.learn-more-grid {
+  padding-bottom: 24px;
 }
 
 .topic-card {
@@ -507,8 +579,8 @@ h1 {
     gap: 36px;
   }
 
-  .weather-card {
-    width: min(100%, 440px);
+  .portrait-placeholder {
+    justify-self: center;
   }
 
   .card-grid {
@@ -517,6 +589,20 @@ h1 {
 
   .topic-card {
     min-height: 180px;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    grid-column: auto;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .profile-links {
+    justify-content: flex-start;
   }
 
   .page-intro {
@@ -532,10 +618,6 @@ h1 {
 
   .hero {
     padding-block: 42px;
-  }
-
-  .weather-card {
-    padding-inline: 20px;
   }
 
   .story-card,

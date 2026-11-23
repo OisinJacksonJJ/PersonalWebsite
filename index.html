@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A personal portfolio and reflection by Oisin Jackson.">
+  <meta name="description" content="Professional profile and portfolio of Oisin Jackson.">
   <title>Home | Oisin Jackson</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Shared header: edit the name here on every page and update the matching navigation link. -->
+  <!-- Shared header: keep the name and navigation consistent across all pages. -->
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Oisin Jackson, home">
       <span class="brand-mark" aria-hidden="true">OJ</span>
@@ -16,67 +16,92 @@
     </a>
     <nav class="site-nav" aria-label="Main navigation">
       <a href="index.html" aria-current="page">Home</a>
+      <a href="learn-more.html">Learn More</a>
       <a href="engagement.html">Engagement &amp; Learning</a>
       <a href="personal.html">Personal Side</a>
       <a href="references.html">Links &amp; References</a>
     </nav>
   </header>
+  <!-- Decorative clouds between the header and page content. Purely visual; change their style in styles.css. -->
+  <div class="cloud-divider" aria-hidden="true">
+    <span class="cloud-bank cloud-bank-left"></span>
+    <span class="cloud-bank cloud-bank-center"></span>
+    <span class="cloud-bank cloud-bank-right"></span>
+  </div>
 
   <main>
-    <!-- Home introduction: replace the example prompts with your own bio and a short welcome. -->
-    <section class="hero page-width">
+    <!-- Professional biography: replace the prompt with a concise introduction about your background and goals. -->
+    <section class="hero profile-hero page-width">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> A portfolio in progress</p>
-        <h1>A little about <span class="text-highlight">me</span>.</h1>
+        <p class="eyebrow"><span class="status-dot"></span> Professional profile</p>
+        <h1>Hello, I’m <span class="text-highlight">Oisin.</span></h1>
         <p class="intro">
-          Welcome to my corner of the internet. This is where I share what I am learning,
-          the people and ideas that shape my work, and where I hope to go next.
+          Write a short professional biography here: what you study or do, what motivates you,
+          and the kind of contribution you hope to make.
         </p>
-        <a class="button-link" href="engagement.html">Explore my journey <span aria-hidden="true">→</span></a>
       </div>
 
-      <!-- Decorative weather-inspired card: change the text or remove this block if it doesn't feel like you. -->
-      <aside class="weather-card" aria-label="A snapshot of my outlook">
-        <div class="weather-card-top"><span>PERSONAL OUTLOOK</span><span>01 / 04</span></div>
-        <div class="weather-art" aria-hidden="true"><span class="sun"></span><span class="cloud cloud-one"></span><span class="cloud cloud-two"></span></div>
-        <p class="weather-label">CURRENT CONDITIONS</p>
-        <p class="weather-title">Curious skies</p>
-        <p class="weather-note">A chance of new ideas, with room to grow.</p>
-        <div class="weather-rule"></div>
-        <p class="weather-foot">Always learning <span>•</span> Looking ahead</p>
-      </aside>
+      <!-- Replace this illustrated placeholder with your own photo file when ready.
+           For example, put profile-photo.jpg beside these files and use:
+           <img class="profile-photo" src="profile-photo.jpg" alt="Professional portrait of Oisin Jackson"> -->
+      <div class="portrait-placeholder" role="img" aria-label="Placeholder for a professional photograph">
+        <span class="portrait-head"></span>
+        <span class="portrait-shoulders"></span>
+        <span class="portrait-caption">Add a professional photograph</span>
+      </div>
     </section>
 
-    <!-- Three short signposts help visitors decide where to go next. Edit titles and descriptions freely. -->
-    <section class="page-width section-block">
+    <!-- Profile details: fill in the prompts below with your skills and career interests. -->
+    <section class="profile-section page-width" aria-labelledby="profile-details-title">
       <div class="section-heading">
-        <p class="eyebrow">A few paths to explore</p>
-        <h2>More than one forecast.</h2>
+        <p class="eyebrow">A snapshot of what I bring</p>
+        <h2 id="profile-details-title">My profile</h2>
       </div>
-      <div class="card-grid">
-        <a class="topic-card" href="engagement.html">
-          <span class="card-number">01</span>
-          <h3>Engagement &amp; Learning</h3>
-          <p>What I have learned from others and how I engage with my profession.</p>
-          <span class="card-arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="topic-card" href="personal.html">
-          <span class="card-number">02</span>
-          <h3>Personal Side</h3>
-          <p>Life beyond the classroom, how I have developed, and what comes next.</p>
-          <span class="card-arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="topic-card" href="references.html">
-          <span class="card-number">03</span>
-          <h3>Links &amp; References</h3>
-          <p>Useful reading, sources, and places to find out more.</p>
-          <span class="card-arrow" aria-hidden="true">↗</span>
-        </a>
+
+      <div class="profile-grid">
+        <article class="profile-card">
+          <p class="eyebrow">Key skills</p>
+          <h3>Things I can bring to a team</h3>
+          <!-- Replace or remove each chip. Add another <span class="skill-chip">...</span> for more skills. -->
+          <ul class="skill-list" aria-label="Key skills">
+            <li class="skill-chip">Add a key skill</li>
+            <li class="skill-chip">Add a key skill</li>
+            <li class="skill-chip">Add a key skill</li>
+            <li class="skill-chip">Add a key skill</li>
+          </ul>
+        </article>
+
+        <article class="profile-card">
+          <p class="eyebrow">Career interests</p>
+          <h3>Where I would like to grow</h3>
+          <!-- Replace these prompts with sectors, roles, or problems that interest you. -->
+          <ul class="interest-list">
+            <li>An area or role that interests me</li>
+            <li>A topic I would like to explore</li>
+            <li>A kind of impact I hope to make</li>
+          </ul>
+        </article>
+
+        <article class="profile-card contact-card">
+          <div>
+            <p class="eyebrow">Connect</p>
+            <h3>Contact and professional links</h3>
+            <p class="contact-note">Replace the sample details with the professional contact information you want to share.</p>
+          </div>
+          <div class="profile-links">
+            <!-- Replace the sample LinkedIn address with your public profile URL. -->
+            <a class="profile-link" href="https://www.linkedin.com/in/oisin-jackson/" target="_blank" rel="noopener noreferrer">LinkedIn profile <span aria-hidden="true">↗</span></a>
+            <!-- Replace this email address with one you are comfortable sharing publicly. -->
+            <a class="profile-link" href="mailto:your.email@example.com">oisin.jackson08@gmail.com</a>
+            <!-- The PDF is stored beside this page so its relative link works on GitHub Pages. -->
+            <a class="profile-link" href="cv.pdf" target="_blank" rel="noopener noreferrer">CV <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
       </div>
     </section>
   </main>
 
-  <!-- Shared footer: update the year or add contact/social links when you are ready. -->
+  <!-- Shared footer: update the year or add further contact links when you are ready. -->
   <footer class="site-footer page-width">
     <span>© 2026 Oisin Jackson</span>
     <span>Made with curiosity <span class="footer-star" aria-hidden="true">✳</span></span>

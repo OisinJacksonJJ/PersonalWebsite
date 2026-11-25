@@ -346,6 +346,19 @@ h1 {
   font-size: 0.8rem;
 }
 
+.software-group + .software-group {
+  margin-top: 12px;
+}
+
+.software-label {
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .interest-list {
   margin: 0;
   padding-left: 19px;
@@ -357,11 +370,10 @@ h1 {
 }
 
 .contact-card {
-  grid-column: 1 / -1;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 26px;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .contact-card h3 {
@@ -378,7 +390,7 @@ h1 {
 .profile-links {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 10px;
 }
 
@@ -408,6 +420,7 @@ h1 {
 }
 
 .learn-more-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   padding-bottom: 24px;
 }
 
@@ -596,13 +609,8 @@ h1 {
   }
 
   .contact-card {
-    grid-column: auto;
     align-items: flex-start;
     flex-direction: column;
-  }
-
-  .profile-links {
-    justify-content: flex-start;
   }
 
   .page-intro {

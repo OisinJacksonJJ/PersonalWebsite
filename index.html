@@ -16,7 +16,7 @@
     </a>
     <nav class="site-nav" aria-label="Main navigation">
       <a href="index.html" aria-current="page">Home</a>
-      <a href="learn-more.html">My Values &amp; Aspirations</a>
+      <a href="#values">Values</a>
       <a href="ise-so-far.html">ISE So Far</a>
       <a href="engagement.html">Learning From Others</a>
       <a href="personal.html">Personal Life</a>
@@ -40,7 +40,7 @@
           https://www.tomweightman.com/ for inspo
           I am a 1st year university student studying Immersive Software Engineering, learning how to build systems, work in the modern technological landscape and have fun with all of it one step at a time. 
         </p>
-        <p>
+        <p class="intro">
           My end goal with this course? To be a reliable team member, navigate any situation that arises and push the boundaries of what's possible with technology as a software engineer
         </p>
       </div>
@@ -107,28 +107,37 @@
           <h3>Where I would like to grow</h3>
           <!-- Replace these prompts with sectors, roles, or problems that interest you. -->
           <ul class="interest-list">
-            <li>The integration between meteorology and technology</li>
-            <li>Deepening my programming skills</li>
-            <li>Building more longer-term software projects</li>
+            <li>Integrating technology to my personal interests, such as meteorology</li>
+            <li>Deepening my programming skills, both for current skills and new skills</li>
+            <li>Building more longer-term software projects and applying them to real world scenarios</li>
           </ul>
         </article>
 
-        <article class="profile-card contact-card">
-          <div>
-            <p class="eyebrow">Connect</p>
-            <h3>Contact and professional links</h3>
-            <p class="contact-note">For professional enquiries, emailing me would be preferred</p>
-          </div>
-          <div class="profile-links">
-            <!-- Replace the sample LinkedIn address with your public profile URL. -->
-            <a class="profile-link" href="https://www.linkedin.com/in/oisin-jackson/" target="_blank" rel="noopener noreferrer">LinkedIn profile <span aria-hidden="true">↗</span></a>
-            <!-- Replace this email address with one you are comfortable sharing publicly. -->
-            <a class="profile-link" href="mailto:oisin.jackson08@gmail.com">oisin.jackson08@gmail.com</a>
-            <!-- The PDF is stored beside this page so its relative link works on GitHub Pages. -->
-            <a class="profile-link" href="cv.pdf" target="_blank" rel="noopener noreferrer">CV <span aria-hidden="true">↗</span></a>
-          </div>
+        <article class="profile-card" id="values">
+          <p class="eyebrow">Values</p>
+          <h3>The core values that dictate how I think and operate</h3>
+          <!-- These values reflect the goals in my bio; adjust them to match what matters most to me. -->
+          <ul class="interest-list">
+            <li><strong>Planning:</strong> Ideas backed by clear direction and motivation make everything easier.</li>
+            <li><strong>Respect:</strong> The equality achieved through Paulo Freire's problem posing education is something I believe should be applied to all aspects of life, both people, no matter what their dynamic is should be equal </li>
+            <li><strong>Curiosity:</strong> Always think "Well, what's next?", explore the why and how in order to envision the next step</li>
+          </ul>
         </article>
       </div>
+
+      <!-- Separate contact panel makes professional links easy to find without competing with profile cards. -->
+      <section class="contact-panel" aria-labelledby="connect-title">
+        <div>
+          <p class="eyebrow">Connect</p>
+          <h2 id="connect-title">Contact and professional links</h2>
+          <p class="contact-note">For professional enquiries, emailing me would be preferred.</p>
+        </div>
+        <div class="profile-links">
+          <a class="profile-link" href="https://www.linkedin.com/in/oisin-jackson/" target="_blank" rel="noopener noreferrer">LinkedIn profile <span aria-hidden="true">↗</span></a>
+          <a class="profile-link" href="mailto:oisin.jackson08@gmail.com">oisin.jackson08@gmail.com</a>
+          <a class="profile-link" href="cv.pdf" target="_blank" rel="noopener noreferrer">CV <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
     </section>
   </main>
 
